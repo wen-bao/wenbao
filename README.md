@@ -34,6 +34,22 @@ sqlite3 -version
 
 ```shell
 python3 /usr/local/python3/lib/python3.7/site-packages/django/bin/django-admin.py startproject myblog
+python3 manage.py startapp blog
 python3 manage.py runserver 0.0.0.0:8000
 ```
 
+```shell
+# 数据库生成
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+# 添加用户
+python3 manage.py createsuperuser
+```
+
+## 其他
+
+git 显示跟踪的文件
+```shell
+git ls-files
+```
