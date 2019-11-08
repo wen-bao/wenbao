@@ -52,7 +52,7 @@ python3 manage.py createsuperuser
 ```shell
 gunicorn -w 5 --preload -b 0.0.0.0:8000 myblog.wsgi:application
 
-gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app &
+gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app
 
 ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
