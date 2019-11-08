@@ -6,7 +6,8 @@
 * django安装
 
 ```shell
-pip3 install django
+pip3 install django==2.2.3
+pip3 install gunicorn==19.9.0
 ```
 
 * sqlite3安装
@@ -47,6 +48,14 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
 
+# 启动
+```shell
+gunicorn -w 5 --preload -b 0.0.0.0:8000 myblog.wsgi:application
+
+gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app &
+
+ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
+```
 ## 其他
 
 git 显示跟踪的文件
