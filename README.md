@@ -36,7 +36,7 @@ sqlite3 -version
 ```shell
 python3 /usr/local/python3/lib/python3.7/site-packages/django/bin/django-admin.py startproject myblog
 python3 manage.py startapp blog
-python3 manage.py runserver 0.0.0.0:8000
+python3 manage.py runserver 0.0.0.0:8888
 ```
 
 ```shell
@@ -48,14 +48,24 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 ```
 
+# fix django bugs
+
+* 修复admin页面css不能正常加载问题
+```shell
+vi /usr/local/lib/python3.7/site-packages/django/contrib/staticfiles/urls.py
+18 - if setting.DEBUG and not urlpatterns:
+18 + if not urlpatterns
+```
+
 # 启动
 ```shell
-gunicorn -w 5 --preload -b 0.0.0.0:8000 myblog.wsgi:application
+gunicorn -w 5 --preload -b 0.0.0.0:8888 myblog.wsgi:application
 
 gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app
 
 ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
+
 ## 其他
 
 git 显示跟踪的文件
