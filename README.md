@@ -46,6 +46,9 @@ python3 manage.py migrate
 
 # 添加用户
 python3 manage.py createsuperuser
+
+# 生成静态文件
+python3 manage.py collectstatic
 ```
 
 # fix django bugs
