@@ -1,4 +1,4 @@
-<!doctype html>
+{% load i18n static %}<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
-    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+        }
+    </script>
     <div class="header">
         <h1 class="site-title text-center"><a href="/myblog/">Wenbao's Blogs</a></h1>
     </div>
@@ -19,17 +22,8 @@
             <div class="post-wrapper">
                 <div class="post">
                     <div class="post-heading">
-                        <h2 class="title"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h2>
+                        <h1 class="title"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h1>
                         <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
-                    </div>
-                    {% if post.photo %}
-                        <div class="thumbnail"><img src="{{ post.photo }}" alt=""></div>
-                    {% else%}
-                        <div class="thumbnail thumbnail-default"></div>
-                    {% endif %}
-                    <div class="post-content read-more-block">{{ post.content }}</div>
-                    <div class="post-footer">
-                        <a class="read-more" href="{% url 'post_detail' id=post.id %}">Read More<i class="fa fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

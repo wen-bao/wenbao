@@ -1,4 +1,4 @@
-<!doctype html>
+{% load i18n static %}<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,28 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
-    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/code.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+        }
+    </script>
     <div class="header">
         <h1 class="site-title text-center"><a href="/myblog/">Wenbao's Blogs</a></h1>
     </div>
     <div class="container post post-detail">
-        <div class="post-heading">
-            <h1 class="title"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h1>
-            <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
-        </div>
-        <div class="location"><i class="fa fa-map-marker"></i>
-            <span id="location-content">{{ post.location }}</span>
-        </div>
-        <div id="map-canvas" class="map"></div>
-        <div class="post-content">{{ post.content }}</div>
+        <div class="post-content">{{ post.content | safe}}</div>
         <hr class="fancy-line">
-        <img class="photo" src="{{ post.photo }}" alt="">
     </div>
-    <script src="https://atts.w3cschool.cn/attachments/image/cimg/js?v=3.exp&libraries=places&sensor=false"></script>
-    <script src="https://atts.w3cschool.cn/attachments/image/cimg/map.js"></script>
 </body>
 </html>

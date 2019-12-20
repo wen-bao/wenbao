@@ -1,0 +1,241 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fbf9f4;
+    color: #004057;
+    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;    
+    font-size: 21px;
+}
+
+body.mobile {
+    font-size: 18px;
+}
+
+.codehilite pre{
+    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+    overflow-x:scroll;
+}
+
+.header {
+    background-color: #fff;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.header:before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 10px;
+    width: 100%;
+}
+
+hr.fancy-line {
+    border: 0;
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+}
+
+hr.fancy-line:before {
+    content:'';
+    height: 10px;   /* half the height of :after */
+    background-color: #fff;
+}
+
+hr.fancy-line:after {
+    top: 0em;
+    height: 5px;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+hr.fancy-line:after, hr.fancy-line:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+}
+
+h2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    margin-bottom: 60px;
+    margin-bottom: 40px;
+    padding: 5px;
+    border-bottom: 2px LightGrey solid;
+    width: 98%;
+    line-height: 150%;
+    color: #666666;
+}
+
+h3 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px LightGrey solid;
+    width: 98%;
+    line-height: 150%;
+    color: #666666;
+}
+
+h4 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px LightGrey solid;
+    width: 98%;
+    line-height: 150%;
+    color: #666666;
+}
+
+.post-heading:hover {
+    background-color: #eee;
+    font-size: 100%;
+}
+
+.container {
+    margin: 0 10%;
+}
+
+body.mobile .container {
+    margin: 3%;
+}
+
+.title, .title a {
+    /* color: #ff5e73; */
+    text-decoration: none;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Lemon', cursive;
+    margin: 0;
+}
+
+.site-title a {
+    color: rgba(255,255,255, 0.8);
+    color: #60482a;
+    text-shadow: -1px -1px #fff;
+    text-decoration: none;
+}
+
+/*
+  Post
+*/
+
+.post-wrapper {
+    width: 100%;
+    float: left;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 12px 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.post:after {
+    width: 100%;
+    height: 7px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(105, 106, 97,0), rgba(105, 106, 97,.1));
+    border-radius: 0 0 15px 15px;
+}
+
+.post-heading {
+    padding: 3px 4%;
+    position: relative;
+    color: #ff5e73;
+    height: 80px;
+}
+
+.post-content {
+    padding: 1% 4%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+.post-footer {
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 10px 20px;
+    border-radius: 0 0 15px 15px;
+}
+
+.post .date {
+    color: #A3A3A3;
+    position: absolute;
+    left: 5px;
+    bottom: -5px;
+    padding: 15px 10px;
+    font-size: 100%;
+}
+
+.post .title {
+    margin-top: 8px;
+    font-size: 21px;
+}
+
+.post.post-detail {
+    margin: 5%;
+    /* max-width: 800px; */
+    /* padding-bottom: 40px; */
+    padding: 30px;
+    font-size: 100%;
+}
+
+body.mobile .post.post-detail {
+    font-size: 10px
+}
+
+.post-detail .post-content {
+    height: auto;
+}
+
+img {
+    display: block;
+    box-shadow: 0 0 10px #555;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-box-shadow: 0 0 10px #555;
+}
+
+img.displayed {
+    text-align: center;
+    display: block;
+}

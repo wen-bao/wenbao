@@ -42,6 +42,7 @@ python3 manage.py runserver 0.0.0.0:8888
 ```shell
 # 数据库生成
 python3 manage.py makemigrations
+python3 manage.py makemigrations blog
 python3 manage.py migrate
 
 # 添加用户
