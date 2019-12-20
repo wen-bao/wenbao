@@ -21,8 +21,8 @@
         {% for post in post_list %}
             <div class="post-wrapper">
                 <div class="post">
-                    <div class="post-heading">
-                        <h1 class="title"><a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a></h1>
+                    <div class="post-heading" onclick=window.location.href="{% url 'post_detail' id=post.id %}">
+                        <h1 class="title">{{ post.title }}</h1>
                         <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
                     </div>
                 </div>
