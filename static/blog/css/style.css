@@ -22,7 +22,7 @@ body.mobile {
 
 .codehilite pre{
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-    overflow-x:scroll;
+    overflow-x: auto;
 }
 
 .header {
