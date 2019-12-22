@@ -70,6 +70,21 @@ gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app
 ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
+## 数据库备份还原
+
+```shell
+# 备份
+sqlite3
+.open db.sqlite3
+.output back.sql
+.dump
+
+# 还原
+sqlite3
+.open test.db
+.read back.sql
+```
+
 ## 其他
 
 git 显示跟踪的文件
