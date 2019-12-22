@@ -239,3 +239,41 @@ img.displayed {
     text-align: center;
     display: block;
 }
+
+/*
+  comment
+*/
+
+#id_body {
+    width: 70%;
+    height: 100%;
+}
+
+input {
+    font-size: 16px;
+}
+
+.comment {
+    display: block;
+}
+
+.comment .info {
+    font-size: 15px;
+    color: #666666;
+}
+
+.comment .say {
+    margin: 0 20px;
+    font-size: 20px;
+    max-width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+body.mobile .comment .say {
+    margin: 0 10px;
+    font-size: 20px;
+    max-width: 100%;
+    max-height: 100px;
+    overflow-y: auto;
+}

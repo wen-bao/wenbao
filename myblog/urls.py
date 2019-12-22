@@ -31,7 +31,7 @@ urlpatterns = [
         path('admin/', admin.site.urls),
         path('hello/', hello_world),
         path('', home),
-        re_path(r'^post/(?P<id>\d+)/$', post_detail, name='post_detail'),
+        re_path(r'^(?P<title>\w+)/$', post_detail, name='post_detail'),
         url(r'mdeditor/', include('mdeditor.urls')),
     ])),
 ]

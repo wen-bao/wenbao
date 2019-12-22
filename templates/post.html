@@ -21,6 +21,31 @@
     <div class="container post post-detail">
         <div class="post-content">{{ post.content | safe}}</div>
         <hr class="fancy-line">
+
+        <form class="post-content" autocomplete="off" action="{% url 'post_detail' title=post.title %}" method="post">
+            {{ comment_form.as_table }}
+            {% csrf_token %}
+            <input type="submit" value="增加评论">
+        </form>
+
+        <div class="post-content">
+            <hr class="fancy-line">
+            {% with comment_list.count as total_comments %}
+                <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+                {% for comment in comment_list %}
+                    <div class="comment">
+                        <p class="info">
+                            #{{ forloop.counter }}楼 {{ comment.created }} by {{ comment.name }} 
+                        </p>
+                        <p class="say">{{ comment.body }}</p>
+                    </div>
+                    <hr class="fancy-line">
+                {% empty %}
+                    <p>还没有评论</p>
+                    <hr class="fancy-line">
+                {% endfor %}
+            {% endwith %}
+        </div>
     </div>
 </body>
 </html>
