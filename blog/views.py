@@ -19,7 +19,7 @@ def hello_world(request):
     return render(request, 'hello_world.html', {'current_time': datetime.datetime.fromtimestamp(int(time.time()), pytz.timezone('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')})
 
 def home(request):
-    post_list = Post.objects.filter(status = 'p')
+    post_list = Post.objects.filter(status = 'p').order_by('-created_at')
     return render(request, 'home.html', {'post_list':post_list})
 
 def post_detail(request, title):
