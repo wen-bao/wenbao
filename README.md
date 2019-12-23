@@ -1,7 +1,8 @@
-# django blogs
-
+# wenbao blogs
 
 ## 环境安装
+
+python3 + sqlite3
 
 * django安装
 
@@ -52,7 +53,7 @@ python3 manage.py createsuperuser
 python3 manage.py collectstatic
 ```
 
-# fix django bugs
+## fix django bugs
 
 * 修复admin页面css不能正常加载问题
 ```shell
@@ -61,13 +62,23 @@ vi /usr/local/lib/python3.7/site-packages/django/contrib/staticfiles/urls.py
 18 + if not urlpatterns
 ```
 
-# 启动
+## 启动
 ```shell
 gunicorn -w 5 --preload -b 0.0.0.0:8888 myblog.wsgi:application
 
 gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app
 
 ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
+```
+
+## 管理
+
+tasks目录
+
+```shell
+sh task.sh start  # 启动
+sh task.sh stop   # 停止
+sh task.sh status # 状态
 ```
 
 ## 数据库备份还原
