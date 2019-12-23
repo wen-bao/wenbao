@@ -22,21 +22,21 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from django.urls import re_path
 
-from blog.views import hello_world
 from blog.views import home
 from blog.views import post_detail
+
 
 urlpatterns = [
     re_path(r'^myblog/', include([
         path('admin/', admin.site.urls),
-        path('hello/', hello_world),
         path('', home),
         re_path(r'^(?P<title>\w+)/$', post_detail, name='post_detail'),
         url(r'mdeditor/', include('mdeditor.urls')),
-    ])),
-]
+    ]))]
+
 
 urlpatterns += staticfiles_urlpatterns()
+
 
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)

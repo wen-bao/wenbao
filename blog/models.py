@@ -1,6 +1,17 @@
+#!/usr/bin/env python3.7.4
+# -*- coding: utf-8 -*-
+"""
+models.py
+
+Author: wsq
+Date: 20191223
+Description: 模型类
+"""
+import django.utils.timezone as timezone
+
 from django.db import models
 from mdeditor.fields import MDTextField #必须导入
-import django.utils.timezone as timezone
+
 
 # Create your models here.
 STATUS_CHOICES = (
@@ -8,6 +19,7 @@ STATUS_CHOICES = (
     ('p', 'Published'),
     ('w', 'Withdrawn')
 )
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)

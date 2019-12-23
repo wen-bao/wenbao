@@ -1,13 +1,18 @@
+#!/usr/bin/env python3.7.4
+# -*- coding: utf-8 -*-
+"""
+admin.py
+
+Author: wsq
+Date: 20191223
+Description: 后台管理类
+"""
 from django.contrib import admin
 
 # Register your models here.
 from blog.models import Comment
 from blog.models import Post
 
-
-def make_published(modeladmin, request, queryset):
-    queryset.update(status='p')
-make_published.short_description = "Mark selected stories as published"
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -24,7 +29,10 @@ class PostAdmin(admin.ModelAdmin):
             message_bit = "1 story was"
         else:
             message_bit = "{} stories were".format(rows_updated)
-        self.message_user(request, "{} successfully marked as published.".format(message_bit))
+        self.message_user(request, "{} successfully marked as published."
+                                   .format(message_bit))
+
+    make_published.short_description = "将所选标记为 published"
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
