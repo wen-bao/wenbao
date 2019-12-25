@@ -1,0 +1,33 @@
+{% load i18n static %}<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oabnew</title>
+    <link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+        }
+    </script>
+    <div class="header">
+        <h1 class="site-title text-center"><a href="#">Wenbao's Blogs</a></h1>
+    </div>
+    <div class="container">
+        {% for post in post_list %}
+            <div class="post-wrapper">
+                <div class="post">
+                    <div class="post-heading" onclick=window.location.href="{% url 'post_detail' title=post.title %}">
+                        <h1 class="title">{{ post.title }}</h1>
+                        <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
