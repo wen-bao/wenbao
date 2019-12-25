@@ -281,3 +281,26 @@ body.mobile .comment .say {
     max-height: 100px;
     overflow-y: auto;
 }
+
+/* 
+wenbao's css 原创修复md解析表格展示问题 
+*/
+table {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    border-collapse: collapse;
+}
+table thead {
+    background-color: #f7f7f7;
+}
+table th,table td {
+    color: #444;
+    padding: .5rem;
+    border: 1px solid #e1e1e1;
+}
+table tr {
+    transition: background-color .3s;
+}
+table tr:hover {
+    background-color: #f8f8f8;
+}
