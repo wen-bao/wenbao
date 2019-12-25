@@ -16,5 +16,5 @@ from apps.blog.views import blog_detail
 
 urlpatterns = [
     path('', home),
-    re_path(r'^(?P<title>\w+)/$', blog_detail, name='blog_detail'),
+    re_path(r'^(?P<title>[\w\W]+)/$', blog_detail, name='blog_detail'),
 ]
