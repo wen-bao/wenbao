@@ -20,7 +20,7 @@ start_app()
 
 stop_app()
 {
-    ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
+    ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9 >/dev/null 2>&1
     check_app gunicorn
 }
 
@@ -58,10 +58,10 @@ if [ ${CMD} = start ]; then
     start_app
     exit 0
 elif [ ${CMD} = stop ]; then
-    stop_app schedule
+    stop_app
     exit 0
 elif [ ${CMD} = restart ]; then
-    restart_app schedule
+    restart_app
     exit 0
 else
     check_app gunicorn
