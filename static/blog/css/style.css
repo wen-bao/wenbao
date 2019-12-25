@@ -24,6 +24,10 @@ body.mobile {
     margin: 30px;
 }
 
+body.mobile .codehilite {
+    margin: 5px;
+}
+
 .codehilite pre{
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
     overflow-x: auto;
@@ -182,7 +186,7 @@ body.mobile .container {
 }
 
 .blog-content {
-    padding: 1% 4%;
+    padding: 1% 4px;
     height: 150px;
     overflow: hidden;
     position: relative;
@@ -212,13 +216,12 @@ body.mobile .container {
 
 .blog.blog-detail {
     margin: 5%;
-    /* max-width: 800px; */
-    /* padding-bottom: 40px; */
     padding: 30px;
     font-size: 100%;
 }
 
 body.mobile .blog.blog-detail {
+    padding: 10px;
     font-size: 10px
 }
 
@@ -248,9 +251,14 @@ img.displayed {
   comment
 */
 
-#id_body {
+#id_body, #id_email, #id_name {
     width: 70%;
     height: 100%;
+}
+
+#submit {
+    float: right;
+    margin-right: 25%;
 }
 
 input {
@@ -294,9 +302,13 @@ table thead {
     background-color: #f7f7f7;
 }
 table th,table td {
+    text-align: center;
     color: #444;
     padding: .5rem;
     border: 1px solid #e1e1e1;
+}
+body.mobile table th, table td {
+    padding: .05rem;
 }
 table tr {
     transition: background-color .3s;

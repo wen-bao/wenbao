@@ -23,9 +23,9 @@
         <hr class="fancy-line">
 
         <form class="blog-content" autocomplete="off" action="{% url 'blog_detail' title=blog.title %}" method="blog">
-            {{ comment_form.as_table }}
+            {{ comment_form.as_p }}
             {% csrf_token %}
-            <input type="submit" value="增加评论">
+            <input id="submit" type="submit" value="增加评论">
         </form>
 
         <div class="blog-content">
