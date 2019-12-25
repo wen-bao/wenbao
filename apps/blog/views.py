@@ -16,17 +16,17 @@ from django.urls import reverse
 # Create your views here.
 from .forms import CommentsForm
 from apps.blog.models import Comment
-from apps.blog.models import Post
+from apps.blog.models import Blog
 
 
 def home(request):
-    post_list = Post.objects.filter(status = 'p').order_by('-created_at')
-    return render(request, 'blog/home.html', {'post_list':post_list})
+    blog_list = Blog.objects.filter(status = 'p').order_by('-created_at')
+    return render(request, 'blog/home.html', {'blog_list':blog_list})
 
-def post_detail(request, title):
-    post = Post.objects.get(title=title)
-    post.content = markdown.markdown(
-        post.content.replace("\r\n",' \n'),
+def blog_detail(request, title):
+    blog = Blog.objects.get(title=title)
+    blog.content = markdown.markdown(
+        blog.content.replace("\r\n",' \n'),
         extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',#语法高亮拓展
@@ -34,7 +34,7 @@ def post_detail(request, title):
         ])#修改blog.content内容为html
 
     try:
-        comment_list = post.comments.filter()
+        comment_list = blog.comments.filter()
     except Exception as err:
         comment_list = None
 
@@ -42,17 +42,17 @@ def post_detail(request, title):
         comment_form = CommentsForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
-            new_comment.post = post
+            new_comment.blog = blog
             new_comment.save()
         return HttpResponseRedirect(
-            reverse('blog/post_detail', kwargs={'title': title}))
+            reverse('blog/blog_detail', kwargs={'title': title}))
 
     comment_form = CommentsForm()
 
     return render(
         request, 
-        'blog/post.html',{
-            'post':post, 
+        'blog/blog.html',{
+            'blog':blog, 
             'comment_list': comment_list, 
             'comment_form': comment_form
         })

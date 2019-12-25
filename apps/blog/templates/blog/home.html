@@ -18,12 +18,12 @@
         <h1 class="site-title text-center"><a href="#">Wenbao's Blogs</a></h1>
     </div>
     <div class="container">
-        {% for post in post_list %}
-            <div class="post-wrapper">
-                <div class="post">
-                    <div class="post-heading" onclick=window.location.href="{% url 'post_detail' title=post.title %}">
-                        <h1 class="title">{{ post.title }}</h1>
-                        <div class="date">{{ post.created_at|date:"Y / m / d" }}</div>
+        {% for blog in blog_list %}
+            <div class="blog-wrapper">
+                <div class="blog">
+                    <div class="blog-heading" onclick=window.location.href="{% url 'blog_detail' title=blog.title %}">
+                        <h1 class="title">{{ blog.title }}</h1>
+                        <div class="date">{{ blog.created_at|date:"Y / m / d" }}</div>
                     </div>
                 </div>
             </div>

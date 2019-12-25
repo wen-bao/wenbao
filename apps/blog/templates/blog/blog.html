@@ -1,0 +1,51 @@
+{% load i18n static %}<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>oabnew</title>
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/code.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+        }
+    </script>
+    <div class="header" onclick=window.location.href="/myblog/">
+        <h1 class="site-title text-center"><a href="../">Wenbao's Blogs</a></h1>
+    </div>
+    <div class="container blog blog-detail">
+        <div class="blog-content">{{ blog.content | safe}}</div>
+        <hr class="fancy-line">
+
+        <form class="blog-content" autocomplete="off" action="{% url 'blog_detail' title=blog.title %}" method="blog">
+            {{ comment_form.as_table }}
+            {% csrf_token %}
+            <input type="submit" value="增加评论">
+        </form>
+
+        <div class="blog-content">
+            <hr class="fancy-line">
+            {% with comment_list.count as total_comments %}
+                <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+                {% for comment in comment_list %}
+                    <div class="comment">
+                        <p class="info">
+                            #{{ forloop.counter }}楼 {{ comment.created }} by {{ comment.name }} 
+                        </p>
+                        <p class="say">{{ comment.body }}</p>
+                    </div>
+                    <hr class="fancy-line">
+                {% empty %}
+                    <p>还没有评论</p>
+                    <hr class="fancy-line">
+                {% endfor %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

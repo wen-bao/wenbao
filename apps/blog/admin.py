@@ -11,11 +11,11 @@ from django.contrib import admin
 
 # Register your models here.
 from apps.blog.models import Comment
-from apps.blog.models import Post
+from apps.blog.models import Blog
 
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'created_at',)
     list_filter = ('status', 'created_at', 'modified_at')
     list_editable = ['status']
@@ -36,7 +36,7 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name','email','post','created','active')
+    list_display = ('name','email','blog','created','active')
     list_filter = ('active','created','updated')
     search_fields = ('name','email','body')
 

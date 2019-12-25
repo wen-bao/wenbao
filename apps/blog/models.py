@@ -21,7 +21,7 @@ STATUS_CHOICES = (
 )
 
 
-class Post(models.Model):
+class Blog(models.Model):
     title = models.CharField(max_length=100)
     content = MDTextField()
     created_at = models.DateTimeField(default = timezone.now)
@@ -32,7 +32,7 @@ class Post(models.Model):
         return self.title
 
 class Comment(models.Model):
-    post=models.ForeignKey(Post,related_name='comments', on_delete=models.CASCADE)
+    blog=models.ForeignKey(Blog,related_name='comments', on_delete=models.CASCADE)
     name=models.CharField(max_length=80)
     email=models.EmailField()
     body=models.TextField()
@@ -44,4 +44,4 @@ class Comment(models.Model):
         ordering = ('created',)
 
     def __str__(self):
-        return 'Comments by {} on {}'.format(self.name, self.post)
+        return 'Comments by {} on {}'.format(self.name, self.blog)

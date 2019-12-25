@@ -12,9 +12,9 @@ from django.urls import path
 from django.urls import re_path
 
 from apps.blog.views import home
-from apps.blog.views import post_detail
+from apps.blog.views import blog_detail
 
 urlpatterns = [
     path('', home),
-    re_path(r'^(?P<title>\w+)/$', post_detail, name='post_detail'),
+    re_path(r'^(?P<title>\w+)/$', blog_detail, name='blog_detail'),
 ]
