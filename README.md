@@ -1,5 +1,11 @@
 # wenbao blogs
 
+工欲善其事，必先利其器。 一直有写博客的习惯，苦于没有满意的平台，尽管第三方博客网站 （本人博客园地址）和许多开源的博客框架都功能齐全， 但对个人使用来说都太臃肿。 我自己理解的博客应该是这样的地方，它就像一本书一样，用文字记录了一个人的点滴， 里面有对技术的分享和理解、对世界的看法，于是决定自己写一个轻量级的个人博客。
+
+博客基于django框架和sqlite3轻量级数据库实现，只有两个页面，一个是“书”的目录，一个是“书”的内容。 该项目现已开源github地址 
+
+[示例网站](http://www.oabnew.com/myblog)
+
 ## 环境安装
 
 python3 + sqlite3
@@ -30,15 +36,7 @@ ldconfig
 sqlite3 -version
 ```
 
-## 编码
-
-初始化django
-
-```shell
-python3 /usr/local/python3/lib/python3.7/site-packages/django/bin/django-admin.py startproject myblog
-python3 manage.py startapp blog
-python3 manage.py runserver 0.0.0.0:8888
-```
+## 配置
 
 ```shell
 # 数据库生成
@@ -51,24 +49,6 @@ python3 manage.py createsuperuser
 
 # 生成静态文件
 python3 manage.py collectstatic
-```
-
-## fix django bugs
-
-* 修复admin页面css不能正常加载问题
-```shell
-vi /usr/local/lib/python3.7/site-packages/django/contrib/staticfiles/urls.py
-18 - if setting.DEBUG and not urlpatterns:
-18 + if not urlpatterns
-```
-
-## 启动
-```shell
-gunicorn -w 5 --preload -b 0.0.0.0:8888 myblog.wsgi:application
-
-gunicorn -c /root/code/myblog/config/gunicorn.conf myblog.wsgi app
-
-ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
 ## 管理
@@ -94,11 +74,4 @@ sqlite3
 sqlite3
 .open test.db
 .read back.sql
-```
-
-## 其他
-
-git 显示跟踪的文件
-```shell
-git ls-files
 ```
