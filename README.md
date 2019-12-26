@@ -10,7 +10,7 @@
 
 python3 + sqlite3
 
-* django安装
+* python3依赖安装
 
 ```shell
 pip3 install django==2.2.3
