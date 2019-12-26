@@ -127,5 +127,9 @@ dmypy.json
 # pid
 *.pid
 
+# projects
+access.log*
+error.log*
+
 # vscode
 .vscode
