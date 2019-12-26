@@ -9,7 +9,7 @@ Description: 视图类
 """
 import markdown
 
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -20,18 +20,19 @@ from apps.blog.models import Blog
 
 
 def home(request):
-    blog_list = Blog.objects.filter(status = 'p').order_by('-created_at')
-    return render(request, 'blog/home.html', {'blog_list':blog_list})
+    blog_list = Blog.objects.filter(status='p').order_by('-created_at')
+    return render(request, 'blog/home.html', {'blog_list': blog_list})
+
 
 def blog_detail(request, title):
     blog = Blog.objects.get(title=title)
     blog.content = markdown.markdown(
-        blog.content.replace("\r\n",' \n'),
+        blog.content.replace("\r\n", ' \n'),
         extensions=[
             'markdown.extensions.extra',
-            'markdown.extensions.codehilite',#语法高亮拓展
-            'markdown.extensions.toc'#自动生成目录
-        ])#修改blog.content内容为html
+            'markdown.extensions.codehilite',  #语法高亮拓展
+            'markdown.extensions.toc'  #自动生成目录
+        ])  #修改blog.content内容为html
 
     try:
         comment_list = blog.comments.filter()
@@ -49,10 +50,8 @@ def blog_detail(request, title):
 
     comment_form = CommentsForm()
 
-    return render(
-        request, 
-        'blog/blog.html',{
-            'blog':blog, 
-            'comment_list': comment_list, 
-            'comment_form': comment_form
-        })
+    return render(request, 'blog/blog.html', {
+        'blog': blog,
+        'comment_list': comment_list,
+        'comment_form': comment_form
+    })

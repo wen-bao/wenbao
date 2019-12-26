@@ -16,7 +16,11 @@ from apps.blog.models import Blog
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'created_at',)
+    list_display = (
+        'title',
+        'status',
+        'created_at',
+    )
     list_filter = ('status', 'created_at', 'modified_at')
     list_editable = ['status']
     actions = ['make_published']
@@ -29,16 +33,19 @@ class BlogAdmin(admin.ModelAdmin):
             message_bit = "1 story was"
         else:
             message_bit = "{} stories were".format(rows_updated)
-        self.message_user(request, "{} successfully marked as published."
-                                   .format(message_bit))
+        self.message_user(
+            request,
+            "{} successfully marked as published.".format(message_bit))
 
     make_published.short_description = "将所选标记为 published"
 
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name','email','blog','created','active')
-    list_filter = ('active','created','updated')
-    search_fields = ('name','email','body')
+    list_display = ('name', 'email', 'blog', 'created', 'active')
+    list_filter = ('active', 'created', 'updated')
+    search_fields = ('name', 'email', 'body')
+
 
 admin.site.site_header = 'wenbao blog'
 admin.site.site_title = 'wenbao'

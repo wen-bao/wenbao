@@ -22,18 +22,19 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from django.urls import re_path
 
-
 urlpatterns = [
-    re_path(r'^{}/'.format(settings.PREFIX_URL), include([
-        path('admin/', admin.site.urls),
-        url(r'mdeditor/', include('mdeditor.urls')),
-        url(r'', include('apps.blog.urls')),
-    ])),
+    re_path(
+        r'^{}/'.format(settings.PREFIX_URL),
+        include([
+            path('admin/', admin.site.urls),
+            url(r'mdeditor/', include('mdeditor.urls')),
+            url(r'', include('apps.blog.urls')),
+        ])),
 ]
-
 
 urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

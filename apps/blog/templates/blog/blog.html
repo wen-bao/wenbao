@@ -1,14 +1,17 @@
-{% load i18n static %}<!doctype html>
+{% load i18n static %}
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'blog/css/code.css' %}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
@@ -31,21 +34,22 @@
         <div class="blog-content">
             <hr class="fancy-line">
             {% with comment_list.count as total_comments %}
-                <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
-                {% for comment in comment_list %}
-                    <div class="comment">
-                        <p class="info">
-                            #{{ forloop.counter }}楼 {{ comment.created }} by {{ comment.name }} 
-                        </p>
-                        <p class="say">{{ comment.body }}</p>
-                    </div>
-                    <hr class="fancy-line">
-                {% empty %}
-                    <p>还没有评论</p>
-                    <hr class="fancy-line">
-                {% endfor %}
+            <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
+            {% for comment in comment_list %}
+            <div class="comment">
+                <p class="info">
+                    #{{ forloop.counter }}楼 {{ comment.created }} by {{ comment.name }}
+                </p>
+                <p class="say">{{ comment.body }}</p>
+            </div>
+            <hr class="fancy-line">
+            {% empty %}
+            <p>还没有评论</p>
+            <hr class="fancy-line">
+            {% endfor %}
             {% endwith %}
         </div>
     </div>
 </body>
+
 </html>
