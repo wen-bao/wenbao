@@ -22,7 +22,7 @@
         <div class="blog-content">{{ blog.content | safe}}</div>
         <hr class="fancy-line">
 
-        <form class="blog-content" autocomplete="off" action="{% url 'blog_detail' title=blog.title %}" method="blog">
+        <form class="blog-content" autocomplete="off" action="{% url 'blog_detail' title=blog.title %}" method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
             <input id="submit" type="submit" value="增加评论">

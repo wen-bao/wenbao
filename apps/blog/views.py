@@ -45,7 +45,7 @@ def blog_detail(request, title):
             new_comment.blog = blog
             new_comment.save()
         return HttpResponseRedirect(
-            reverse('blog/blog_detail', kwargs={'title': title}))
+            reverse('blog_detail', kwargs={'title': title}))
 
     comment_form = CommentsForm()
 
