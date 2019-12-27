@@ -21,6 +21,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from django.urls import re_path
+from django.views.static import serve
 
 urlpatterns = [
     re_path(
@@ -28,13 +29,15 @@ urlpatterns = [
         include([
             path('{}/'.format(settings.ADMIN), admin.site.urls),
             url(r'mdeditor/', include('mdeditor.urls')),
+            url(r'^static/(?P<path>.*)$',
+                serve, {'document_root': settings.STATIC_ROOT},
+                name='media'),
+            url(r'^media/(?P<path>.*)$',
+                serve, {'document_root': settings.MEDIA_ROOT},
+                name='media'),
             url(r'', include('apps.blog.urls')),
         ])),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-
-if settings.DEBUG:
-    # static files (images, css, javascript, etc.)
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
