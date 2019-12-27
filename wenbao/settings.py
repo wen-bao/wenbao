@@ -22,13 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j$_ipu4jha(85d-9kbewv-w=9js7ju(gke2hrurmy@ko+)(3d^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
 # wenbao define
-# default PREFIX_URL = ''
-PREFIX_URL = 'myblog'
+# default PREFIX = '' ADMIN = 'admin'
+PREFIX = 'myblog'
+ADMIN = 'admin'
 
 # Application definition
 

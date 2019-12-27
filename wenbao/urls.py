@@ -24,9 +24,9 @@ from django.urls import re_path
 
 urlpatterns = [
     re_path(
-        r'^{}/'.format(settings.PREFIX_URL),
+        r'^{}/'.format(settings.PREFIX),
         include([
-            path('admin/', admin.site.urls),
+            path('{}/'.format(settings.ADMIN), admin.site.urls),
             url(r'mdeditor/', include('mdeditor.urls')),
             url(r'', include('apps.blog.urls')),
         ])),
