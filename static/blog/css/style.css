@@ -11,7 +11,7 @@ html, body {
 
 body {
     background-color: #fbf9f4;
-    color: #004057;
+    color: #000000;
     font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;    
     font-size: 21px;
 }
@@ -222,7 +222,7 @@ body.mobile .container {
 
 body.mobile .blog.blog-detail {
     padding: 10px;
-    font-size: 10px
+    font-size: 15px;
 }
 
 .blog-detail .blog-content {
