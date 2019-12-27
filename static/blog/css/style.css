@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-text-size-adjust: none;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -20,6 +24,10 @@ body.mobile {
     font-size: 18px;
 }
 
+P, li {
+    line-height: 1.8;
+}
+
 .codehilite {
     margin: 30px;
 }
@@ -31,6 +39,7 @@ body.mobile .codehilite {
 .codehilite pre{
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
     overflow-x: auto;
+    line-height: 1.3;
 }
 
 .header {
@@ -191,6 +200,7 @@ body.mobile .container {
     overflow: hidden;
     position: relative;
     background-color: #fff;
+    font-weight: 500;
 }
 
 .blog-footer {
