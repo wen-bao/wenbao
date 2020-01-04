@@ -158,6 +158,13 @@ body.mobile .container {
     text-decoration: none;
 }
 
+.blog a {
+    text-decoration: none;
+    cursor: crosshair;
+    border-bottom: 1px dashed orange;
+    color: #930ee4;
+}
+
 /*
   Blog
 */
