@@ -44,7 +44,6 @@ body.mobile .codehilite {
 
 .header {
     background-color: #fff;
-    margin-bottom: 40px;
     padding: 10px 0;
     position: relative;
 }
@@ -225,8 +224,8 @@ body.mobile .container {
 }
 
 .blog.blog-detail {
-    margin: 5%;
-    padding: 30px;
+    margin: 0% 14%;
+    padding: 2% 8% 4% 8%;
     font-size: 100%;
 }
 
