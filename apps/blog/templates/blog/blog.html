@@ -17,9 +17,29 @@
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');
         }
+
+        // 当网页向下滑动 20px 出现"返回顶部" 按钮
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("btnTop").style.display = "block";
+            } else {
+                document.getElementById("btnTop").style.display = "none";
+            }
+        }
+
+        // 点击按钮，返回顶部
+        function returnTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
+    <button onclick="returnTop()" id="btnTop" title="返回顶部">返回顶部</button>
     <div class="header" onclick=window.location.href="/myblog/">
-        <h1 class="site-title text-center"><a href="../">Wenbao's Blogs</a></h1>
+        <a href="../">Wenbao's Blogs</a>
     </div>
     <div class="container blog blog-detail">
         <div class="blog-content">{{ blog.content | safe}}</div>
