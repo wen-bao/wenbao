@@ -29,10 +29,25 @@ def blog_detail(request, title):
     blog.content = markdown.markdown(
         blog.content.replace("\r\n", ' \n'),
         extensions=[
+            'markdown.extensions.abbr',
             'markdown.extensions.extra',
-            'markdown.extensions.codehilite',  #语法高亮拓展
-            'markdown.extensions.toc'  #自动生成目录
-        ])  #修改blog.content内容为html
+            'markdown.extensions.abbr',
+            'markdown.extensions.attr_list',
+            'markdown.extensions.def_list',
+            'markdown.extensions.fenced_code',
+            'markdown.extensions.footnotes',
+            'markdown.extensions.tables',
+            'markdown.extensions.admonition',
+            # 语法高亮拓展
+            'markdown.extensions.codehilite',
+            'markdown.extensions.meta',
+            'markdown.extensions.nl2br',
+            'markdown.extensions.sane_lists',
+            'markdown.extensions.smarty',
+            # 自动生成目录
+            'markdown.extensions.toc',
+            'markdown.extensions.wikilinks',
+        ])  # 修改blog.content内容为html
 
     try:
         comment_list = blog.comments.filter()
