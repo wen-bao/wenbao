@@ -145,7 +145,7 @@ h4 {
 }
 
 .container {
-    margin: 0 10%;
+    margin: 0 5%;
 }
 
 body.mobile .container {
@@ -242,14 +242,14 @@ body.mobile .container {
 }
 
 .blog.blog-detail {
-    margin: 0% 14%;
-    padding: 2% 8% 4% 8%;
+    margin: 0% 8%;
+    padding: 2% 5% 4% 5%;
     font-size: 18px;
 }
 
 body.mobile .blog.blog-detail {
     padding: 10px;
-    font-size: 15px;
+    font-size: 5.5px;
 }
 
 .blog-detail .blog-content {
