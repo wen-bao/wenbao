@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
@@ -19,7 +18,7 @@
         }
 
         // 当网页向下滑动 20px 出现"返回顶部" 按钮
-        window.onscroll = function () {
+        window.onscroll = function() {
             scrollFunction()
         };
 
@@ -39,21 +38,19 @@
     </script>
     <button onclick="returnTop()" id="btnTop" title="返回顶部">返回顶部</button>
     <div class="header" onclick=window.location.href="/myblog/">
-        <a href="../">Wenbao's Blogs</a>
+        <a href="../"><span class="pron">Wenbao's</span> <span class="hub">Blogs</span><sup>18+ Only</sup></a>
     </div>
     <div class="container blog blog-detail">
         <div class="blog-content">{{ blog.content | safe}}</div>
         <hr class="fancy-line">
 
         <form class="blog-content" autocomplete="off" action="{% url 'blog_detail' title=blog.title %}" method="post">
-            {{ comment_form.as_p }}
-            {% csrf_token %}
+            {{ comment_form.as_p }} {% csrf_token %}
             <input id="submit" type="submit" value="增加评论">
         </form>
 
         <div class="blog-content">
-            <hr class="fancy-line">
-            {% with comment_list.count as total_comments %}
+            <hr class="fancy-line"> {% with comment_list.count as total_comments %}
             <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
             {% for comment in comment_list %}
             <div class="comment">
@@ -62,12 +59,9 @@
                 </p>
                 <p class="say">{{ comment.body }}</p>
             </div>
-            <hr class="fancy-line">
-            {% empty %}
+            <hr class="fancy-line"> {% empty %}
             <p>还没有评论</p>
-            <hr class="fancy-line">
-            {% endfor %}
-            {% endwith %}
+            <hr class="fancy-line"> {% endfor %} {% endwith %}
         </div>
     </div>
 </body>

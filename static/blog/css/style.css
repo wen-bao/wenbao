@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -8,15 +10,16 @@ html {
     -webkit-text-size-adjust: none;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #fbf9f4;
+    background-color: black;
     color: #000000;
-    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;    
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 21px;
 }
 
@@ -24,7 +27,8 @@ body.mobile {
     font-size: 18px;
 }
 
-P, li {
+P,
+li {
     line-height: 1.8;
 }
 
@@ -36,7 +40,7 @@ body.mobile .codehilite {
     margin: 5px;
 }
 
-.codehilite pre{
+.codehilite pre {
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
     overflow-x: auto;
     line-height: 1.3;
@@ -56,8 +60,8 @@ body.mobile .header {
     font-size: 25px;
 }
 
-.header a{
-    text-decoration:none;
+.header a {
+    text-decoration: none;
     color: rgb(2, 5, 27);
 }
 
@@ -70,16 +74,43 @@ body.mobile .header {
     width: 100%;
 }
 
+.header .pron {
+    /* background-color: black; */
+    color: white;
+    font-weight: bold;
+}
+
+.header .hub {
+    background-color: rgb(242, 156, 57);
+    font-weight: bold;
+    border-radius: 5px;
+    width: 20px;
+}
+
+.header sup {
+    color: white;
+    font-size: 4px;
+    position: relative;
+    left: -4%;
+    top: -6px;
+}
+
+body.mobile .header sup {
+    visibility: hidden;
+}
+
 hr.fancy-line {
     border: 0;
     height: 1px;
     position: relative;
-    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+    margin: 0.5em 0;
+    /* Keep other elements away from pseudo elements*/
 }
 
 hr.fancy-line:before {
-    content:'';
-    height: 10px;   /* half the height of :after */
+    content: '';
+    height: 10px;
+    /* half the height of :after */
     background-color: #fff;
 }
 
@@ -90,19 +121,21 @@ hr.fancy-line:after {
     background-color: #fff;
 }
 
-hr.fancy-line:after, hr.fancy-line:before {
+hr.fancy-line:after,
+hr.fancy-line:before {
     content: '';
     position: absolute;
     width: 100%;
 }
 
-hr.fancy-line, hr.fancy-line:before {
-    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+hr.fancy-line,
+hr.fancy-line:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
 }
 
 h1 {
@@ -152,7 +185,8 @@ body.mobile .container {
     margin: 0 3%;
 }
 
-.title, .title a {
+.title,
+.title a {
     text-decoration: none;
 }
 
@@ -163,7 +197,7 @@ body.mobile .container {
 }
 
 .site-title a {
-    color: rgba(255,255,255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     color: #60482a;
     text-shadow: -1px -1px #fff;
     text-decoration: none;
@@ -175,6 +209,7 @@ body.mobile .container {
     border-bottom: 1px dashed orange;
     color: #930ee4;
 }
+
 
 /*
   Blog
@@ -200,7 +235,7 @@ body.mobile .container {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: linear-gradient(rgba(105, 106, 97,0), rgba(105, 106, 97,.1));
+    background: linear-gradient(rgba(105, 106, 97, 0), rgba(105, 106, 97, .1));
     border-radius: 0 0 15px 15px;
 }
 
@@ -233,12 +268,18 @@ body.mobile .container {
     left: 5px;
     bottom: -5px;
     padding: 15px 10px;
-    font-size: 100%;
+    font-size: 80%;
 }
 
 .blog .title {
     margin-top: 8px;
-    font-size: 21px;
+    font-size: 25px;
+    color: rgb(239, 155, 56);
+}
+
+body.mobile .blog .title {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .blog.blog-detail {
@@ -256,7 +297,9 @@ body.mobile .blog.blog-detail {
     height: auto;
 }
 
-img,iframe,audio {
+img,
+iframe,
+audio {
     display: block;
     box-shadow: 0 0 10px #555;
     border-radius: 6px;
@@ -274,11 +317,14 @@ img.displayed {
     display: block;
 }
 
+
 /*
   comment
 */
 
-#id_body, #id_email, #id_name {
+#id_body,
+#id_email,
+#id_name {
     width: 70%;
     height: 100%;
 }
@@ -321,34 +367,45 @@ body.mobile .comment .say {
     overflow-y: auto;
 }
 
+
 /* 
 wenbao's css 原创修复md解析表格展示问题 
 */
+
 table {
     width: 100%;
     border: 1px solid #e1e1e1;
     border-collapse: collapse;
 }
+
 table thead {
     background-color: #f7f7f7;
 }
-table th,table td {
+
+table th,
+table td {
     text-align: center;
     color: #444;
     padding: .5rem;
     border: 1px solid #e1e1e1;
 }
-body.mobile table th, table td {
+
+body.mobile table th,
+table td {
     padding: .05rem;
 }
+
 table tr {
     transition: background-color .3s;
 }
+
 table tr:hover {
     background-color: #f8f8f8;
 }
 
+
 /* return top */
+
 #btnTop {
     display: none;
     position: fixed;
@@ -362,8 +419,8 @@ table tr:hover {
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
-  }
-  
-  #btnTop:hover {
+}
+
+#btnTop:hover {
     background-color: #1E90FF;
-  }
+}

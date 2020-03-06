@@ -4,11 +4,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
-    <link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -18,7 +17,7 @@
         }
     </script>
     <div class="header">
-        <a href="#">Wenbao's Blogs</a>
+        <a href="#"><span class="pron">Wenbao's</span> <span class="hub">Blogs</span><sup>18+ Only</sup></a>
     </div>
     <div class="container">
         {% for blog in blog_list %}
