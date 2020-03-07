@@ -251,6 +251,12 @@ body.mobile .blog-heading {
     font-weight: 500;
 }
 
+.blog-content input,
+textarea {
+    border: 1px solid rgb(32, 29, 29);
+    background-color: transparent;
+}
+
 .blog-footer {
     text-align: center;
     background-color: #fff;
@@ -298,8 +304,15 @@ body.mobile .blog.blog-detail {
     height: auto;
 }
 
+
+/* video {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
 img,
 iframe,
+video,
 audio {
     display: block;
     box-shadow: 0 0 10px #555;
@@ -308,6 +321,7 @@ audio {
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 20em;
     max-width: 100%;
     max-height: 100%;
     -webkit-box-shadow: 0 0 10px #555;
