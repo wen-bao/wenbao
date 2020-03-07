@@ -46,6 +46,10 @@ li {
     -webkit-border-radius: 6px;
 }
 
+body.mobile .codehilite pre {
+    font-size: 0.6em;
+}
+
 .header {
     margin: auto;
     position: relative;
@@ -206,7 +210,6 @@ body.mobile .container {
 
 .blog-wrapper {
     width: 100%;
-    float: left;
 }
 
 .blog {
@@ -235,6 +238,10 @@ body.mobile .container {
     height: 4em;
 }
 
+body.mobile .blog-heading {
+    height: 2.5em;
+}
+
 .blog-content {
     padding: 1% 4px;
     height: 150px;
@@ -260,10 +267,20 @@ body.mobile .container {
     font-size: 80%;
 }
 
+body.mobile .blog .date {
+    left: 0.8em;
+    font-size: 60%;
+}
+
 .blog .title {
     margin-top: 0.4em;
     font-size: 1.05em;
     color: rgb(239, 155, 56);
+}
+
+body.mobile .blog .title {
+    margin-top: 0.1em;
+    font-size: 0.7em;
 }
 
 .blog.blog-detail {
@@ -274,7 +291,7 @@ body.mobile .container {
 
 body.mobile .blog.blog-detail {
     padding: 1em;
-    font-size: 0.278em;
+    font-size: 0.5em;
 }
 
 .blog-detail .blog-content {
