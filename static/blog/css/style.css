@@ -94,7 +94,7 @@ body.mobile .codehilite pre {
 
 hr.fancy-line {
     border: 0;
-    height: 1px;
+    height: 0.25em;
     position: relative;
     margin: 0.5em 0;
     /* Keep other elements away from pseudo elements*/
@@ -102,14 +102,14 @@ hr.fancy-line {
 
 hr.fancy-line:before {
     content: '';
-    height: 10px;
+    height: 0.25em;
     /* half the height of :after */
     background-color: #fff;
 }
 
 hr.fancy-line:after {
     top: 0em;
-    height: 5px;
+    height: 0.1em;
     border-bottom: 1px solid #fff;
     background-color: #fff;
 }
@@ -137,8 +137,8 @@ h1 {
 
 h2 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-bottom: 40px;
-    padding: 5px;
+    margin-bottom: 1em;
+    padding: 0.5em 0;
     border-bottom: 2px LightGrey solid;
     width: 98%;
     line-height: 150%;
@@ -147,8 +147,8 @@ h2 {
 
 h3 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
     border-bottom: 1px LightGrey solid;
     width: 98%;
     line-height: 150%;
@@ -157,8 +157,8 @@ h3 {
 
 h4 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
     border-bottom: 1px LightGrey solid;
     width: 98%;
     line-height: 150%;

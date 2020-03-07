@@ -12,7 +12,7 @@
 
 <body>
     <script>
-        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+        if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');
         }
     </script>
