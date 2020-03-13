@@ -429,3 +429,21 @@ table tr:hover {
 #btnTop:hover {
     background-color: #1E90FF;
 }
+
+
+/* footer */
+
+body .icp {
+    color: #f8f8f8;
+    text-align: center;
+    margin: 2em 0 1em 0;
+}
+
+body.mobile .icp {
+    font-size: 0.4em;
+}
+
+body .icp a {
+    color: #f8f8f8;
+    text-decoration: none;
+}
