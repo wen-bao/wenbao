@@ -447,3 +447,7 @@ body .icp a {
     color: #f8f8f8;
     text-decoration: none;
 }
+
+body wdetail {
+    display: none;
+}
