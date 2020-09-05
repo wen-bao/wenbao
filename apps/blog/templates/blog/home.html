@@ -4,10 +4,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js server="netease" type="playlist" id="2250011882" fixed="true" mini="true">
+    </meting-js>
+
 </head>
 
 <body>
@@ -32,7 +42,8 @@
         {% endfor %}
     </div>
     <footer>
-        <div class="icp">© 2018-2020 oabnew.com 版权所有 许可证：<a href="http://www.beian.miit.gov.cn/">晋ICP备17009907号</a></div>
+        <div class="icp">© 2018-2020 oabnew.com 版权所有 许可证：<a href="http://www.beian.miit.gov.cn/">晋ICP备17009907号</a>
+        </div>
     </footer>
 </body>
 
