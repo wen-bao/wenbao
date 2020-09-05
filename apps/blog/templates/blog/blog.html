@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'blog/css/code.css' %}" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{% static 'blog/jquery-3.1.1/jquery-3.1.1.min.js' %}"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         }
 
         // 当网页向下滑动 20px 出现"返回顶部" 按钮
-        window.onscroll = function() {
+        window.onscroll = function () {
             scrollFunction()
         };
 
@@ -37,7 +38,7 @@
             document.documentElement.scrollTop = 0;
         }
 
-        $(document).on("click", "wenbao", function(event) {
+        $(document).on("click", "wenbao", function (event) {
             $(this).children('wdetail').toggle()
         });
     </script>
@@ -70,7 +71,8 @@
         </div>
     </div>
     <footer>
-        <div class="icp">© 2018-2020 oabnew.com 版权所有 许可证：<a href="http://www.beian.miit.gov.cn/">晋ICP备17009907号</a></div>
+        <div class="icp">© 2018-2020 oabnew.com 版权所有 许可证：<a href="http://www.beian.miit.gov.cn/">晋ICP备17009907号</a>
+        </div>
     </footer>
 </body>
 
