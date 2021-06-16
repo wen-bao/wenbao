@@ -35,7 +35,7 @@ urlpatterns = [
             url(r'^media/(?P<path>.*)$',
                 serve, {'document_root': settings.MEDIA_ROOT},
                 name='media'),
-            url(r'', include('apps.blog.urls')),
+            url(r'', include('blog.core.urls')),
         ])),
 ]
 

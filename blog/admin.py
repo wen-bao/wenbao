@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.7.4
+# !/usr/bin/env python3.7.4
 # -*- coding: utf-8 -*-
 """
 admin.py
@@ -10,8 +10,8 @@ Description: 后台管理类
 from django.contrib import admin
 
 # Register your models here.
-from apps.blog.models import Comment
-from apps.blog.models import Blog
+from blog.core.models import Comment
+from blog.core.models import Blog
 
 
 @admin.register(Blog)

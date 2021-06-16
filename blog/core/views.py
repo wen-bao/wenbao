@@ -15,8 +15,8 @@ from django.urls import reverse
 
 # Create your views here.
 from .forms import CommentsForm
-from apps.blog.models import Comment
-from apps.blog.models import Blog
+from blog.core.models import Comment
+from blog.core.models import Blog
 
 
 def home(request):
@@ -31,15 +31,17 @@ def blog_detail(request, title):
         extensions=[
             'markdown.extensions.abbr',
             'markdown.extensions.extra',
-            'markdown.extensions.abbr',
             'markdown.extensions.attr_list',
             'markdown.extensions.def_list',
             'markdown.extensions.fenced_code',
             'markdown.extensions.footnotes',
+            'markdown.extensions.md_in_html',
             'markdown.extensions.tables',
             'markdown.extensions.admonition',
             # 语法高亮拓展
             'markdown.extensions.codehilite',
+            'markdown.extensions.legacy_attrs',
+            'markdown.extensions.legacy_em',
             'markdown.extensions.meta',
             'markdown.extensions.nl2br',
             'markdown.extensions.sane_lists',

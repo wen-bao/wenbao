@@ -11,8 +11,8 @@ from django.conf.urls import url
 from django.urls import path
 from django.urls import re_path
 
-from apps.blog.views import home
-from apps.blog.views import blog_detail
+from blog.core.views import home
+from blog.core.views import blog_detail
 
 urlpatterns = [
     path('', home),

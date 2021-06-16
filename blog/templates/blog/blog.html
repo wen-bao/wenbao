@@ -9,7 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>oabnew</title>
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'blog/css/code.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'blog/highlight/github.min.css' %}" rel="stylesheet">
+    <script src="{% static 'blog/highlight/highlight.min.js' %}"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
     <script src="{% static 'blog/jquery-3.1.1/jquery-3.1.1.min.js' %}"></script>
 </head>
 

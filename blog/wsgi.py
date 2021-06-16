@@ -10,6 +10,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wenbao.settings')
+SETTINGS = "blog.settings.development"
+
+if os.environ.get("ENV", None) == "staging":
+    SETTINGS = "blog.settings.staging"
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", SETTINGS)
 
 application = get_wsgi_application()

@@ -14,10 +14,7 @@ python3 + sqlite3
 
 * python3依赖安装
 
-```shell
-pip3 install django==2.2.3
-pip3 install gunicorn==19.9.0
-```
+python3 -m pip install -r requirements.txt
 
 ## 配置
 

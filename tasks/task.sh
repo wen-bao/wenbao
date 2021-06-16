@@ -14,7 +14,7 @@ EOF
 start_app()
 {
     cd ${CURR_DIR}/../
-    gunicorn -c ./config/gunicorn.conf wenbao.wsgi app
+    gunicorn -c ./config/gunicorn.conf blog.wsgi app
     check_app gunicorn
 }
 
