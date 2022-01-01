@@ -1,6 +1,11 @@
 #!/bin/bash
+NEED_ECHO=1
+if [ ! -t 0 ]; then
+    NEED_ECHO=0
+fi
 
 CURR_DIR=$(cd $(dirname $0); pwd)
+GUNICORN=/project/softs/python3.7.4/bin/gunicorn
 
 usage()
 {
@@ -14,14 +19,14 @@ EOF
 start_app()
 {
     cd ${CURR_DIR}/../
-    gunicorn -c ./config/gunicorn.conf blog.wsgi app
-    check_app gunicorn
+    ${GUNICORN} -c ./config/gunicorn.conf blog.wsgi app
+    check_app ${GUNICORN}
 }
 
 stop_app()
 {
-    ps -ef | grep gunicorn | grep -v grep | awk '{print $2}' | xargs kill -9 >/dev/null 2>&1
-    check_app gunicorn
+    ps -ef | grep ${GUNICORN} | grep -v grep | awk '{print $2}' | xargs kill -9 >/dev/null 2>&1
+    check_app ${GUNICORN}
 }
 
 restart_app()
@@ -35,9 +40,15 @@ check_app()
     prog=$1
     result=$(ps -ef | grep ${prog} | grep -v "grep")
     if [[ "$result" != "" ]]; then
-        echo "${prog} 正在运行"
+        if [ ${NEED_ECHO} -eq 1 ]; then
+            echo "`date` ${prog} 正在运行"
+        fi
+        return 0
     else
-        echo "${prog} 停止运行"
+        if [ ${NEED_ECHO} -eq 1 ]; then
+            echo "`date` ${prog} 停止运行"
+        fi
+        return 1
     fi
 }
 
@@ -64,6 +75,5 @@ elif [ ${CMD} = restart ]; then
     restart_app
     exit 0
 else
-    check_app gunicorn
-    exit 0
+    check_app ${GUNICORN}
 fi
